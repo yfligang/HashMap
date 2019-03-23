@@ -16,9 +16,10 @@ public class HelloController {
 
     @RequestMapping(value = "/getDemo/{userName}",method = RequestMethod.GET) //访问这个方法，标注出的路径  getDemo后是你的参数
     public String getDemo(@PathVariable String userName){ //只要你在getDemo/后再添加信息，就可以返回
-
+        String i = "aaaa";  //这部分就是业务逻辑
+        userName = userName + " " + i;  //这部分就是业务逻辑
         System.out.println(userName);
-        return "data you put is " + userName ;
+        return "data you put is(您输入的数据是): " + userName ; //data you put is userName aaaa
     }
 
     @RequestMapping(value = "postDemo",method = RequestMethod.POST)
