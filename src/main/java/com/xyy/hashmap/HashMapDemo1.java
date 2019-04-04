@@ -26,8 +26,25 @@ public class HashMapDemo1 {
         HashMap map1 = new HashMap();
 
         for (int i = 0; i < 12; i++){
-            
+            //随机获取一个[0,100]之间的数字
+            val = random.nextInt(100);
+
+            key = String.valueOf(val);
+
+            //随机获取一个[1,5]之间的数字
+            value = random.nextInt(5);
+
+            //添加到HashMap中
+            map1.put(key,value);
+
+            System.out.println("map的值为:  " + map1);
         }
+
+        // 通过entrySet()遍历HashMap的key-value
+        iteratorHaskMapByKeySet(map1);
+
+        
+
     }
 
 
