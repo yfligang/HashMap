@@ -44,7 +44,7 @@ public class HashMapDemo1 {
 
         iteratorHashMapByKeySet(map1);
 
-        //iteratorHashMapJustValues(map1);
+        iteratorHashMapJustValues(map1);
     }
 
     private static void iteratorHaskMapByEntrySet(HashMap map1){
@@ -78,6 +78,17 @@ public class HashMapDemo1 {
         }
     }
 
+    //遍历HashMap的values
+    private static void iteratorHashMapJustValues(HashMap map1){
+        if (map1 == null){
+            return;
+        }
 
+        Collection collection = map1.values();
+        Iterator iterator = collection.iterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+    }
 
 }
