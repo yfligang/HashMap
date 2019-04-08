@@ -13,8 +13,7 @@ package com.xyy.hashmap;
  19  */
 
 
-import java.util.HashMap;
-import java.util.Random;
+import java.util.*;
 
 public class HashMapDemo1 {
 
@@ -41,10 +40,42 @@ public class HashMapDemo1 {
         }
 
         // 通过entrySet()遍历HashMap的key-value
-        iteratorHaskMapByKeySet(map1);
+        iteratorHaskMapByEntrySet(map1);
 
-        
+        iteratorHashMapByKeySet(map1);
 
+        //iteratorHashMapJustValues(map1);
+    }
+
+    private static void iteratorHaskMapByEntrySet(HashMap map1){
+        if (map1 == null){
+            return;
+        }
+
+        System.out.println("\niterator HashMap by entryset");
+        String key = null;
+        Integer integer = null;
+        Iterator iterator = map1.entrySet().iterator();
+        while(iterator.hasNext()){
+            Map.Entry entry = (Map.Entry)iterator.next();
+
+            key = (String)entry.getKey();
+            integer = (Integer)entry.getValue();
+            System.out.println(key + "--" + integer.intValue());
+        }
+    }
+
+    //遍历HashMap的values
+    private static void iteratorHashMapByKeySet(HashMap map1){
+        if (map1 == null){
+            return;
+        }
+
+        Collection collection = map1.values();
+        Iterator iterator = collection.iterator();
+        while(iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
     }
 
 
